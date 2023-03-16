@@ -6,7 +6,7 @@
 /*   By: anvannin <anvannin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 20:05:12 by anvannin          #+#    #+#             */
-/*   Updated: 2023/02/28 21:21:00 by anvannin         ###   ########.fr       */
+/*   Updated: 2023/03/16 18:49:02 by anvannin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,12 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }t_list;
+
+typedef struct i_list
+{
+	int				content;
+	struct i_list	*next;
+}t_intl;
 
 //	libft
 int		ft_isalpha(int c);
@@ -98,5 +104,18 @@ char	*get_next_line(int fd);
 //	extra
 long	ft_atol(char *str);
 double	ft_atof(char *str);
+
+int		titl_node_index(t_intl **list, t_intl *node);
+void	tintl_print(t_intl **list);
+t_intl	*tintl_push(int content);
+int		tintl_smallest_pos(t_intl **list);
+int		tintl_last(t_intl **lst);
+int		is_tintl_ordered(t_intl **list);
+int		tintl_biggest(t_intl **list);
+int		tintl_smallest(t_intl **list);
+int		tintl_length(t_intl **list);
+void	tintl_free(t_intl **list);
+int		has_tintl_neg(t_intl **list);
+int		is_tintl_revordered(t_intl **list);
 
 #endif
