@@ -20,7 +20,7 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-ARCHIVE = ar -rsv
+ARCHIVE = ar -rs
 
 REMOVE = rm -f
 
@@ -29,16 +29,17 @@ NAME = libft.a
 all: ${NAME}
 
 ${NAME}:
-	${CC} ${CFLAGS} -c ${FILES}
-	${ARCHIVE} libft.a ${OBJECTS}
+	@${CC} ${CFLAGS} -c ${FILES}
+	@${ARCHIVE} libft.a ${OBJECTS}
 
 clean:
-	rm -f ${OBJECTS}
+	@rm -f ${OBJECTS}
 
 fclean: clean
-	rm -f ${NAME}
+	@rm -f ${NAME}
 
 re:	fclean all
 
 .PHONY: all clean fclean re
-.SILENT: all clean fclean re
+
+.SILENT:
