@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 char	*ft_itoh(unsigned int n, char *base)
 {
@@ -18,14 +18,15 @@ char	*ft_itoh(unsigned int n, char *base)
 	int		i;
 	char	*str;
 
-	l = n / 16;
+	l = n / 16 + 1;
 	i = 0;
-	str = malloc(sizeof(char) * l);
-	while (i < l + 1)
+	str = malloc(sizeof(char) * l + 1);
+	while (i < l)
 	{
 		str[i] = base[n % 16];
 		n /= 16;
 		i++;
 	}
+	str[l] = '\0';
 	return (str);
 }
