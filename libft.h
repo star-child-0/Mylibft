@@ -104,6 +104,7 @@ char	*get_next_line(int fd);
 //	extra
 long	ft_atol(char *str);
 double	ft_atof(char *str);
+char	*ft_itoh(unsigned int nbr, char *base);
 
 int		titl_node_index(t_intl **list, t_intl *node);
 void	tintl_print(t_intl **list);
