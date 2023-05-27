@@ -6,7 +6,7 @@
 /*   By: anvannin <anvannin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 20:05:12 by anvannin          #+#    #+#             */
-/*   Updated: 2023/03/16 18:49:02 by anvannin         ###   ########.fr       */
+/*   Updated: 2023/05/27 09:01:42 by anvannin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ char	*get_next_line(int fd);
 long	ft_atol(char *str);
 double	ft_atof(char *str);
 char	*ft_itoh(unsigned int nbr, char *base);
+void	free_matrix(void **matrix);
 
 int		titl_node_index(t_intl **list, t_intl *node);
 void	tintl_print(t_intl **list);
