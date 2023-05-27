@@ -6,7 +6,7 @@
 /*   By: anvannin <anvannin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 20:05:12 by anvannin          #+#    #+#             */
-/*   Updated: 2023/05/27 09:01:42 by anvannin         ###   ########.fr       */
+/*   Updated: 2023/05/27 09:59:34 by anvannin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
+# endif
+
+# ifndef GNL_FREE
+#  define GNL_FREE -42
 # endif
 
 typedef struct s_list

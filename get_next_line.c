@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anvannin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: anvannin <anvannin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:38:17 by anvannin          #+#    #+#             */
-/*   Updated: 2022/11/09 21:38:20 by anvannin         ###   ########.fr       */
+/*   Updated: 2023/05/27 10:01:53 by anvannin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,15 +86,20 @@ char	*file_read(int fd, char *stash)
 
 char	*get_next_line(int fd)
 {
-	static char	*stash[4096];
+	static char	*stash;
 	char		*line;
 
+	if (fd == GNL_FREE)
+	{
+		free(stash);
+		return (NULL);
+	}
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
-	stash[fd] = file_read(fd, stash[fd]);
-	if (!stash[fd])
+	stash = file_read(fd, stash);
+	if (!stash)
 		return (NULL);
-	line = trim_stash(stash[fd]);
-	stash[fd] = new_line(stash[fd]);
+	line = trim_stash(stash);
+	stash = new_line(stash);
 	return (line);
 }
